@@ -23,9 +23,9 @@ cp examples/config.example.json config.json
 cp examples/sites.example.json sites.json
 ```
 
-Modify `config.json` and enter the URL of your `TextBelt` instance, and your phone number.
+Modify `config.json` and enter the URL of your TextBelt instance, and your phone number.
 
-Start `Downtime Alerter`
+Start Downtime Alerter:
 ```
 npm run start
 ```

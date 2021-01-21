@@ -3,8 +3,6 @@ Monitors uptime of webpages and sends an SMS message if they are unavailable.
 
 Requires a [TextBelt](https://github.com/typpo/textbelt#usage-as-a-standalone-server) instance for SMS messaging.
 
-Downtime Alerter sends a POST request to TextBelt to send the messages.
-
 # Setup Instructions
 First, set up a [TextBelt](https://github.com/typpo/textbelt#usage-as-a-standalone-server) instance. Make sure [Redis](https://redis.io/topics/quickstart) is installed, as per the TextBelt installation instructions.
 

@@ -54,6 +54,7 @@ function removeSite() {
     for(var i = 0; i < websites.length; i++) {
         if(websites[i].checked) {
             var urlToRemove = websites[i].parentNode.getAttribute("data-url")
+            websites[i].checked = false;
             websites[i].parentNode.remove();
         }
     }
@@ -68,9 +69,7 @@ function removeSite() {
     removeRequest.setRequestHeader('Content-type', 'application/json');
 
     removeRequest.addEventListener('load', function (event) {
-        if (event.target.status === 200) {
-
-        } else {
+        if (event.target.status !== 200) {
             alert("Error removing website from database: " + event.target.response);
         }
     });

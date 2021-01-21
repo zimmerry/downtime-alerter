@@ -6,7 +6,7 @@ Requires a [TextBelt](https://github.com/typpo/textbelt#usage-as-a-standalone-se
 # Setup Instructions
 First, set up a [TextBelt](https://github.com/typpo/textbelt#usage-as-a-standalone-server) instance. Make sure [Redis](https://redis.io/topics/quickstart) is installed, as per the TextBelt installation instructions.
 
-Make sure you have the latest version of [nodejs](https://nodejs.org/) installed.
+Make sure you have the latest version of [nodejs](https://nodejs.org/en/download/) installed.
 
 Download and install dependencies:
 

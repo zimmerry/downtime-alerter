@@ -29,3 +29,5 @@ Start Downtime Alerter:
 ```
 npm run start
 ```
+
+You should now be able to access Downtime Alerter at port 8686.

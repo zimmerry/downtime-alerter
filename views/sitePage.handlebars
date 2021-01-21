@@ -1,0 +1,24 @@
+<main class="content">
+    <aside class="new-website-container">
+
+        <h2>Add Website</h2>
+
+        <div class="website-input-container">
+            <label for="new-website-text" class="website-input-label">URL</label>
+                <div class="website-input-element">
+                    <input type="text" name="new-website-text" id="new-website-text" class="website-input">
+                </div>
+        </div>
+
+        <button id="new-website-button" class="action-button">Submit</button>
+
+    </aside>
+
+    <section id="websites">
+    
+        {{#each site}}
+            {{> site}}
+        {{/each}}
+
+    </section>
+</main>

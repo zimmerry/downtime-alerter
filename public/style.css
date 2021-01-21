@@ -1,0 +1,127 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #1146f6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+header a {
+  color: #fff;
+}
+
+.site-title {
+  font-family: "Roboto Slab", serif;
+  font-size: 80px;
+  font-weight: 100;
+  margin: 0 0 0 20px;
+  padding-top: 30px;
+}
+
+.site-title a:hover {
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+}
+
+.new-website-container {
+  display: inline-block;
+  min-width: 200px;
+  max-width: 200px;
+  margin: 10px 10px auto 10px;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: #efefef;
+}
+
+.new-website-container h2 {
+  margin: 0;
+}
+
+.website-input-container {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.website-input-element {
+  margin: 0 5px;
+  flex: 1 1 100%;
+}
+
+.website-input {
+  font-size: 14px;
+  width: 100%;
+  margin-left: 10px;
+  padding: 3px;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+}
+
+.action-button {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #ababab;
+  border-radius: 5px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #f9d2b2;
+  border-color: #333;
+  color: #333;
+}
+
+#new-website-button {
+  width: 100%;
+}
+
+.website {
+  display: inline-block;
+  vertical-align: top;
+  height: 25px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+}
+
+/*
+ * 404 page stuff
+ */
+
+.error-container {
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+}
+
+.error-container h2 {
+  font-size: 128px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.error-container h3 {
+  font-size: 32px;
+  margin: 0;
+}

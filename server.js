@@ -76,7 +76,7 @@ app.post('/removeSite', function(req, res, next) {
 function sendTextMessage(url) {
     axios.post(config["url"], {
         number: config["phone"],
-        message: `${url} is unavailble`
+        message: `${url} is unavailable`
     })
     .then((response) => {
         console.log(response);
@@ -112,3 +112,4 @@ cron.schedule('*/10 * * * *', () => {
 app.listen(port, function () {
     console.log('Downtime Alerter listening on port 8686')
 })
+

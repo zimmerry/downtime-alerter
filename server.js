@@ -1,7 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars')
 const axios = require('axios');
-const http = require("http");
 const https = require('https');
 const cron = require('node-cron');
 const fs = require('fs');
@@ -91,18 +90,28 @@ function checkWebsite(url) {
         res.statusCode !== 200;
 
         if(res.statusCode === 502) {
-            sendTextMessage(url)
+            return 1;
         }
     })
     .on('error', function(e) {
-        sendTextMessage(url)
-    });     
+        return 1;
+    });
+    return 0;
 }
 
 function test(){
     websites.forEach(function(item, index, array) {
-        checkWebsite(item["url"]);
-    })
+        let fail = 0;
+        for (let i = 0; i < 10; i++) {
+            if (checkWebsite(item['url'])) {
+                break;
+            }
+            fail++;
+        }
+        if (fail == 10) {
+            sendTextMessage(item['url']);
+        }
+    });
 }
 
 cron.schedule('*/10 * * * *', () => {
@@ -112,4 +121,3 @@ cron.schedule('*/10 * * * *', () => {
 app.listen(port, function () {
     console.log('Downtime Alerter listening on port 8686')
 })
-

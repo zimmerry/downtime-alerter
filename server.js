@@ -1,13 +1,11 @@
 const express = require('express');
-const exphbs = require('express-handlebars')
-const axios = require('axios');
-const http = require("http");
-const https = require('https');
+const exphbs = require('express-handlebars');
 const cron = require('node-cron');
 const fs = require('fs');
 
 var config = require('./config.json');
 var websites = require('./sites.json');
+const check = require('./public/check.js')
 
 const app = express()
 const port = 8686
@@ -73,43 +71,10 @@ app.post('/removeSite', function(req, res, next) {
     }
 });
 
-function sendTextMessage(url) {
-    axios.post(config["url"], {
-        number: config["phone"],
-        message: `${url} is unavailable`
-    })
-    .then((response) => {
-        console.log(response);
-    }, (error) => {
-        console.log(error);
-    });
-}
-
-function checkWebsite(url) {
-    https.get(url, function(res) {
-        console.log(url, res.statusCode);
-        res.statusCode !== 200;
-
-        if(res.statusCode === 502) {
-            sendTextMessage(url)
-        }
-    })
-    .on('error', function(e) {
-        sendTextMessage(url)
-    });     
-}
-
-function test(){
-    websites.forEach(function(item, index, array) {
-        checkWebsite(item["url"]);
-    })
-}
-
 cron.schedule('*/10 * * * *', () => {
-    test()
+    check.test(websites)
 })
 
 app.listen(port, function () {
     console.log('Downtime Alerter listening on port 8686')
 })
-

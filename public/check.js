@@ -1,11 +1,12 @@
 const axios = require('axios');
 const https = require('https');
 var config = require('../config.json');
+let date_ob = new Date();
 
 function sendTextMessage(url) {
     axios.post(config["url"], {
         number: config["phone"],
-        message: `${url} is unavailable`
+        message: `[${date_ob.getHours()}:${date_ob.getMinutes()}:${date_ob.getSeconds()}] ${url} is unavailable`
     })
     .then((response) => {
         console.log(response);
